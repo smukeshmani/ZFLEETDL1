@@ -1,0 +1,132 @@
+<mvc:View controllerName="ZGBC_FLEET.ZGBC_FLEET.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"  
+          xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified"
+	      xmlns:l="sap.ui.layout">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>title}" titleAlignment = "Center">
+				<content>
+					    <MessageStrip visible="{localModel2>/Visible}"
+							text="{localModel2>/Text}"
+							type="{localModel2>/Type}"
+							showIcon="true"
+							showCloseButton="true"
+							class="sapUiMediumMarginBottom">
+					    </MessageStrip>
+						<VBox class="sapUiSmallMargin">
+						<f:SimpleForm id="IdEmpDetail"
+						              editable="true" 
+						              layout="ResponsiveGridLayout"
+						              title="Employee Details"
+						              labelSpanXL="4"
+									  labelSpanL="4"
+									  labelSpanM="12"
+									  labelSpanS="12"
+								      adjustLabelSpan="false"
+								      emptySpanXL="0"
+									  emptySpanL="0"
+									  emptySpanM="0"
+									  emptySpanS="0"
+							          columnsXL="2"
+								      columnsL="2"
+									  columnsM="2"
+									  singleContainerFullSize="false"
+									  backgroundDesign = "Solid">
+							<f:content>
+								    <core:Title text="" />
+									<Label text="Employee Number" required="true"/>
+									<Input id="idEmpid" value="" submit="onSubmit" placeholder="Enter Employee ID"></Input>
+									<Label text="Employee Name"/>
+									<Text id="idNameEn" text="{/NameEn}" ></Text>
+									<Label text="Employee Name(Arabic)"/>
+									<Text id="idNameAr" text="{/NameAr}" ></Text>
+									<Label text="Position Code"/>
+									<Text text="{/PositionId}" id="idPositionCode"></Text>
+									<Label text="Position"/>
+									<Text text="{/PositionTextEn}" id="idPositionEn"></Text>
+									<Label text="Position(Arabic)"/>
+									<Text text="{/PositionTextAr}" id="idPositionAr"></Text>
+								    <Label text="Department"/>
+									<Text text="{/DepartmentEn}" id="idDepartmentEn"></Text>
+									<Label text="Department(Arabic)"/>
+									<Text text="{/DepartmentAr}" id="idDepartmentAr"></Text>
+								  
+								    <core:Title text="" />
+								    <Label text=""/>
+								    <Text text="" id="Blank"></Text>
+									<Label text="CompanyCode"/>
+									<Text text="{/Cocd}" id="idCocd"></Text>
+									<Label text="Company name"/>
+									<Text text="{/CocdDesc}" id="idCompanyName"></Text>
+									<Label text="Employee Grade/Group ID" />
+									<Text id="idEmpSubGroup" text ="{/EmpSubgroup}"></Text>
+								    <Label text="Employee Grade/Group Desc." />
+									<Text id="idEmpSubGroupDesc" text="{/EmpSubgroupDesc}"></Text>
+									<Label text="Iquama No"/>
+									<Text id="idIquama" text="{/IdNoEn}" ></Text>
+                                    <Label text="Driving license No" required="true"/>
+									<Input id="idDl" value="{/Dl}" enabled="true" placeholder="Enter your Driving license number"></Input>
+							</f:content>
+					 	 </f:SimpleForm>
+					</VBox>
+					
+					<!--Vehicle type -->
+						<VBox class="sapUiSmallMargin">
+						<f:SimpleForm id="IdVehicleSelection"
+						              editable="true" 
+						              layout="ResponsiveGridLayout"
+						              title="Select Vehicle"
+						              labelSpanXL="4"
+									  labelSpanL="4"
+									  labelSpanM="12"
+									  labelSpanS="12"
+								      adjustLabelSpan="false"
+								      emptySpanXL="0"
+									  emptySpanL="0"
+									  emptySpanM="0"
+									  emptySpanS="0"
+							          columnsXL="2"
+								      columnsL="2"
+									  columnsM="2"
+									  singleContainerFullSize="false"
+									  backgroundDesign = "Solid"
+									  visible="{localModel>/VehicleTypeVisbile}">
+							 <f:content>
+							 	<core:Title text="" />
+				        	    <Label text="Select Vehicle" required="true"/>
+								<Select width="100%" visible="{localModel>/VehicleTypeVisbile}" items="{localModel>/VehicleType/}" 
+								change = 'onSelectVehicle' selectedKey = "{localModel>/VehicleSelected}">
+				    			<core:Item text="{localModel>VehicleName}"  key="{localModel>VehicleKey}"/>			
+								</Select>
+							    <core:Title text="" />
+				        	    <Label text="Select Monthly Rent" required="true"/>
+								<Select width="100%" visible="{localModel>/MonthlyRentVisbible}" items="{localModel>/MonthlyRent/}"
+								                                                                 selectedKey = "{localModel>/MonthlyRentSelected}">
+				    			<core:Item text="{localModel>InstallText}"  key="{localModel>InstallmentCat}"/>			
+								</Select>
+							 </f:content>
+							 
+							 </f:SimpleForm>
+							</VBox>
+							
+				</content>
+				
+				<footer>
+					   <OverflowToolbar id="otbFooter">
+<!--		        	 <Button
+		        	    type="Emphasized"
+                        icon="sap-icon://alert"
+                        text="{= ${message>/}.length }"
+                        visible="{= ${message>/}.length > 0 }"
+                        press="onMessagePopoverPress">
+		        	 	<layoutData><OverflowToolbarLayoutData priority="NeverOverflow" /></layoutData>
+		        	 </Button>-->
+				     <ToolbarSpacer/>
+				     <Button type="Emphasized" text="Submit Request" press="onSubmitRequest" width="200px" id = "Idsubmit" visible="{localModel>/SumitRequestVisible}" >
+			   		 <layoutData><OverflowToolbarLayoutData priority="NeverOverflow" /></layoutData>
+		    		 </Button>
+			         </OverflowToolbar>
+	            	</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
