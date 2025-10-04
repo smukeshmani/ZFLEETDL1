@@ -1,0 +1,37 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog title="Violation List Terms and Condition">
+		<Table id="idProductsTableDialog" inset="false" items="{localModel>/violationCollection}">
+			<columns>
+				<Column width="2em">
+					<Text text="No"/>
+				</Column>
+				<Column width="14em" minScreenWidth="Tablet" demandPopin="true" hAlign="End">
+					<Text text="Violation Description in Arabic"/>
+				</Column>
+				<Column width="14em" minScreenWidth="Desktop" demandPopin="true">
+					<Text text="Violation Description in English"/>
+				</Column>
+				<Column width="4em" minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+					<Text text="Ownership"/>
+				</Column>
+				<Column width="3em" hAlign="End">
+					<Text text="Amount"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem>
+					<cells>
+						<ObjectIdentifier title="{localModel>No}"/>
+						<Text text="{localModel>DescAr}"/>
+						<Text text="{localModel>DescEn}"/>
+						<Text text="{localModel>Ownership}"/>
+						<Text text="{localModel>Amount}"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<endButton>
+			<Button text="Close" press="onClose"></Button>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

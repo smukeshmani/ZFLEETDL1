@@ -1,0 +1,20 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" height="100%">
+	<Dialog id="idDialog" contentWidth="auto" contentHeight="auto">
+		<customHeader>
+			<Bar>
+				<contentMiddle>
+					<Text text="File View" class="sapUiSizeCompact"/>
+				</contentMiddle>
+				<contentRight>
+					<Button type="Accept" icon="sap-icon://print" press="onPressBarPrintBtn" class="sapUiSizeCompact"></Button>
+					<Button type="Reject" icon="sap-icon://decline" press="onPressBarCloseBtn" class="sapUiSizeCompact"></Button>
+					
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<Image id="image" visible="false"/>
+		<!--<PDFViewer id="idPdfViewer" source="data:application/pdf;base64, {pdfModel>/Source}" visible="false" displayType="Embedded"
+			showDownloadButton="true"></PDFViewer>-->
+		<core:HTML id="idPdfViewer"/>
+	</Dialog>
+</core:FragmentDefinition>

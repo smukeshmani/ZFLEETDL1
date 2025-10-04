@@ -1,0 +1,93 @@
+{
+	"violationCollection": [{
+		"No": "1",
+		"DescAr": "عدم الاحتفاظ بطاقة التشغيل داخل المركبة",
+		"DescEn": "Operation card is not available in the truck.",
+		"Ownership": "Driver",
+		"Amount": 2000
+	}, {
+		"No": "2",
+		"DescAr": "سير المركبة بلا لوحة امامية",
+		"DescEn": "Driving a vehicle without front plates",
+		"Ownership": "Driver",
+		"Amount": 1000
+	}, {
+		"No": "3",
+		"DescAr": "سير المركبة بلا لوحة خلفية أو بلا لوحات",
+		"DescEn": "Driving a vehicle without front plates",
+		"Ownership": "Driver",
+		"Amount": 1000
+	}, {
+		"No": "4",
+		"DescAr": "قيادة المركبة بلوحات غير واضحة",
+		"DescEn": "Driving a vehicle with unclear or damaged license plates",
+		"Ownership": "Driver",
+		"Amount": 1000
+	}, {
+		"No": "5",
+		"DescAr": "عدم الالتزام بحدود المسارات",
+		"DescEn": "Non-compliance with the limits of selected tracks on the road",
+		"Ownership": "Driver",
+		"Amount": 300
+	}, {
+		"No": "6",
+		"DescAr": "وقوف المركبة في اماكن غير مخصصة للوقوف",
+		"DescEn": "Wrong Parking",
+		"Ownership": "Driver",
+		"Amount": 100
+	}, {
+		"No": "7",
+		"DescAr": "استخدام السائق بيده أي جهاز محمول اثناء سير المركبة -رصد آلي",
+		"DescEn": "Using a cell phone or other electronic device in hand",
+		"Ownership": "Driver",
+		"Amount": 500
+	}, {
+		"No": "8",
+		"DescAr": "عدم ربط حزام الامان - رصد آلي",
+		"DescEn": "Seat belt not applied",
+		"Ownership": "Driver",
+		"Amount": 150
+	}, {
+		"No": "9",
+		"DescAr": "تجاوز السرعة المحددة باكثر من 10 الى 20 كلم/س  - رصد آلي",
+		"DescEn": "Overspeeding 10 to 20 Kmph",
+		"Ownership": "Driver",
+		"Amount": 150
+	}, {
+		"No": "10",
+		"DescAr": "تجاوز السرعة المحددة باكثر من 20 الى 30 كلم/س  - رصد آلي",
+		"DescEn": "Overspeeding 20 to 30 Kmph",
+		"Ownership": "Driver",
+		"Amount": 300
+	}, {
+		"No": "11",
+		"DescAr": "تجاوز اشارة المرور الضوئية اثناء الضوء الاحمر - رصد آلي",
+		"DescEn": "Passing the red signal light",
+		"Ownership": "Driver",
+		"Amount": 3000
+	}, {
+		"No": "12",
+		"DescAr": "عدم الالتزام بحدود المسارات المحددة على الطريق - رصد آلي",
+		"DescEn": "Not following the right tracks",
+		"Ownership": "Driver",
+		"Amount": 300
+	}, {
+		"No": "13",
+		"DescAr": "عدم وجود انارة جانبية أو عواكس  أو سواتر للشاحنات والمقطورات",
+		"DescEn": "The absence of side lighting or reflectors for trailers",
+		"Ownership": "Driver",
+		"Amount": 1000
+	}, {
+		"No": "14",
+		"DescAr": "مخالفة عدم تسليم اصل رخصة سير",
+		"DescEn": "Original Istimarah is not available in the Vehicle",
+		"Ownership": "Driver",
+		"Amount": 300
+	}, {
+		"No": "15",
+		"DescAr": "عدم حمل رخصة القيادة أو رخصة السير",
+		"DescEn": "Original Istimarah or Driving Licence is not available in the Vehicle",
+		"Ownership": "Driver",
+		"Amount": 300
+	}]
+}

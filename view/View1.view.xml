@@ -1,0 +1,216 @@
+<mvc:View controllerName="ZFLEET_DELIVERY_TRUCK_REQ.ZFLEET_DELIVERY_TRUCK_REQ.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" 
+		xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified" xmlns:l="sap.ui.layout">
+	<Shell id="shell">
+		<App id="idAppControl">
+			<pages>
+				<Page title="{i18n>title}" titleAlignment="Center">
+					<content>
+						<MessageStrip visible="{localModel2>/Visible}" text="{localModel2>/Text}" showIcon="true" showCloseButton="true" class="sapUiMediumMarginBottom"/>
+						<VBox class="sapUiSmallMargin">
+							<f:SimpleForm id="IdEmpDetail" editable="true" layout="ResponsiveGridLayout" title="Employee Details" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" backgroundDesign="Solid" singleContainerFullSize="false">
+								<f:content>
+									<core:Title text=""/>
+									<Label text="Employee Number" required="true"/>
+									<Input id="idEmpid" value="" submit="onSubmit" placeholder="Enter Employee ID"/>
+									<Label text="Employee Name"/>
+									<Text id="idNameEn" text="{/NameEn}"/>
+									<Label text="Employee Name(Arabic)"/>
+									<Text id="idNameAr" text="{/NameAr}"/>
+									<Label text="Position Code"/>
+									<Text text="{/PositionId}" id="idPositionCode"/>
+									<Label text="Position"/>
+									<Text text="{/PositionTextEn}" id="idPositionEn"/>
+									<Label text="Position(Arabic)"/>
+									<Text text="{/PositionTextAr}" id="idPositionAr"/>
+									<Label text="Department"/>
+									<Text text="{/DepartmentEn}" id="idDepartmentEn"/>
+									<Label text="Department(Arabic)"/>
+									<Text text="{/DepartmentAr}" id="idDepartmentAr"/>
+									<Label text="Channel"/>
+									<Text text="{/Channel}" id="idChannel"/>
+									<Label text="Request Delivery Truck"/>
+									<Input id="idPlateNo" type="Text" placeholder="Enter Vehicle ID" showSuggestion="true" showValueHelp="true" valueHelpRequest=".onValueHelpRequestCust" submit="onEnterVechile" enabled="{localModel>/idVehicleId}">
+										<suggestionItems>
+											<core:Item text="{VehicleId}"/>
+										</suggestionItems>
+									</Input>
+									<!--<Button id="idcheckFleetBtn" type="Accept" press="fleetCheck" text="Check Availbility"/>-->
+									<Label text="Delivery Truck Name"/>
+									<Text text="" id="idVechileName"/>
+									<Label text="Mobile: +966-"/>
+									<Input value="" id="idDriverMobile" enabled="{localModel>/idDriverMobile}" required="true" maxLength="9"/>
+									<core:Title text=""/>
+									<Label text=""/>
+									<Text text="" id="Blank"/>
+									<Label text="CompanyCode"/>
+									<Text text="{/Cocd}" id="idCocd"/>
+									<Label text="Company name"/>
+									<Text text="{/CocdDesc}" id="idCompanyName"/>
+									<Label text="Delivering Plant (Own or External)"/>
+									<Text text="{/Plant}" id="idEmpPlant"/>
+									<Label text="Employee Grade/Group ID"/>
+									<Text id="idEmpSubGroup" text="{/EmpSubgroup}"/>
+									<Label text="Employee Grade/Group Desc."/>
+									<Text id="idEmpSubGroupDesc" text="{/EmpSubgroupDesc}"/>
+									<Label text="Iqama No"/>
+									<Text id="idIquama" text="{/IdNoEn}"/>
+									<Label text="Employee Cost Center"/>
+									<Text id="idEmpCostCenter" text="{/CostCenter}"/>
+									<Label text="Driving license No"/>
+									<Input id="idDl" value="{/IdNoEn}" enabled="false" required="true"/>
+									<Label text="Driving lic Expiry Date"/>
+									<DatePicker id="idD2" enabled="{localModel>/idD2}" valueFormat="yyyy-MM-dd" displayFormat="long" displayFormatType="Gregorian" change="handleChangeLocalDL" required="true"/>
+									<Label text="Driver Card Expiry Date"/>
+									<DatePicker id="idD3" enabled="{localModel>/idD3}" valueFormat="yyyy-MM-dd" displayFormat="long" displayFormatType="Gregorian" change="handleChangeLocalMOT" required="true"/>
+								</f:content>
+							</f:SimpleForm>
+						</VBox>
+						<!--Vehicle type -->
+						<VBox class="sapUiSmallMargin">
+							<f:SimpleForm id="IdVehicleSelection" editable="true" layout="ResponsiveGridLayout" title="Vehicle Details" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" backgroundDesign="Solid" singleContainerFullSize="false" visible="{localModel>/VehicleDetVisible}">
+								<f:content>
+									<core:Title text=""/>
+									<Label text="Vehicle ID" required="true"/>
+									<Text id="idVehicleId" text="{localModel>/Vehicleid}"/>
+									<Label text="Vehicle Name"/>
+									<Text id="idVehicleName" text="{localModel>/VehicleName}"/>
+									<Label text="Vehicle Owner/Vendor"/>
+									<Text id="idVehicleVendor" text="{localModel>/VehicleVendor}"/>
+									<Label text="Vehicle/Plate Number"/>
+									<Text id="idVehicleNumber" text="{localModel>/VehicleNumber}"/>
+									<core:Title text=""/>
+									<Label text="Plant" required="true"/>
+									<Text id="idPlant" text="{localModel>/Plant}"/>
+									<Label text="Location"/>
+									<Text id="idLocation" text="{localModel>/Location}"/>
+									<Label text="Cost Center"/>
+									<Text id="idCostCenter" text="{localModel>/CostCenter}"/>
+								</f:content>
+							</f:SimpleForm>
+						</VBox>
+						<VBox class="sapUiSmallMargin">
+							<MessageStrip text="Maximum File Size 1MB for Document and 2 MB for Images and Checklist" type="Warning" showIcon="true" showCloseButton="true" class="sapUiMediumMarginBottom"/>
+							<f:SimpleForm id="IdVehicleCheckList" editable="true" layout="ResponsiveGridLayout" title="Vehicle and Driver Documents" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" backgroundDesign="Solid" singleContainerFullSize="false" visible="{localModel>/VehicleDetVisible}">
+								<f:content>
+									<core:Title text="Attachments"/>
+									<Label text="Signed Copy of Check list"/>
+									<u:FileUploader id="idfileCheckList" width="100%" tooltip="Upload Signed Copy of Check list" style="Emphasized" placeholder="Choose a file for Upload..." maximumFileSize="2" fileSizeExceed="handleFile_2MB" 
+									 enabled="{localModel>/idfileCheckList}" />
+									<Button id="idfileChkListBtn" type="Accept" press="openCheckFile" visible="{localModel>/idfileChkListBtn}"/>
+									<Label text="Driving Licence"/>
+									<u:FileUploader id="idfileDL" width="100%" tooltip="Upload Driver Licence" style="Emphasized" placeholder="Choose a file for Upload..." maximumFileSize="1" fileSizeExceed="handleFile" 
+									enabled="{localModel>/idfileDL}"/>
+									<Button id="idfileDLBtn" type="Accept" press="openDLFile" visible="{localModel>/idfileDLBtn}"/>
+									<Label text="MOT Card for Drivers"/>
+									<u:FileUploader id="idfileMOT" width="100%" tooltip="Upload MOT Card for Drivers" style="Emphasized" placeholder="Choose a file for Upload..." maximumFileSize="1" fileSizeExceed="handleFile"
+									enabled="{localModel>/idfileMOT}"/>
+									<Button id="idfileMOTButton" type="Accept" press="openMOTCardDrvFile" visible="{localModel>/idfileMOTButton}"/>
+									<Label text="Front Image of Vechile"/>
+									<u:FileUploader id="idFrontUpload" width="100%" tooltip="Upload Front Image of Drivers" style="Emphasized" placeholder="Choose a file for Upload..." maximumFileSize="2" fileSizeExceed="handleFile_2MB"
+									enabled="{localModel>/idFrontUpload}" />
+									<Button id="idFront" type="Accept" press="openFrontBtn" text="Front Image"/>
+									<Label text="Left Image of Vechile"/>
+									<u:FileUploader id="idLeftUpload" width="100%" tooltip="Upload Left Image of Drivers" style="Emphasized" placeholder="Choose a file for Upload..." maximumFileSize="2" fileSizeExceed="handleFile_2MB"
+									enabled="{localModel>/idLeftUpload}" />
+									<Button id="idLeft" type="Accept" press="openLeftBtn" text="Left Image"/>
+									<Label text="Right Image of Vechile"/>
+									<u:FileUploader id="idRightUpload" width="100%" tooltip="Upload Right Image of Drivers" style="Emphasized" placeholder="Choose a file for Upload..." maximumFileSize="2" fileSizeExceed="handleFile_2MB"
+									enabled="{localModel>/idRightUpload}" />
+									<Button id="idRight" type="Accept" press="openRightBtn" text="Right Image"/>
+									<Label text="Back Image of Vechile"/>
+									<u:FileUploader id="idBackUpload" width="100%" tooltip="Upload Back Image of Drivers" style="Emphasized" placeholder="Choose a file for Upload..." maximumFileSize="2" fileSizeExceed="handleFile_2MB"
+									enabled="{localModel>/idBackUpload}" />
+									<Button id="idBack" type="Accept" press="openBackBtn" text="Back Image"/>
+									
+									<!--<Label text="Actions"/>-->
+									<!--<Button id="idButtonUpload" text="Upload Files" width="100px" press="onUploadDocument" activeIcon="sap-icon://upload"-->
+									<!--	/>-->
+									<Label text="Front Images"/>
+									<HBox >
+										<l:HorizontalLayout id="idFleetImagesFront"></l:HorizontalLayout>
+									</HBox>
+									<Label text="Back Images"/>
+									<HBox >
+										<l:HorizontalLayout id="idFleetImagesBack"></l:HorizontalLayout>
+									</HBox>
+									<Label text="Right Images"/>
+									<HBox >
+										<l:HorizontalLayout id="idFleetImagesRight"></l:HorizontalLayout>
+									</HBox>
+									<Label text="Left Images"/>
+									<HBox >
+										<l:HorizontalLayout id="idFleetImagesLeft"></l:HorizontalLayout>
+									</HBox>
+									<Label/>
+									
+									<Label text="Vechile Documents"/>
+									<HBox>
+										<Button id="idfileIshtimarah" type="Accept" press="openIshtimarahFile" visible="{localModel>/idfileIshtimarah}" text="Ishtimarah Certificate"/>
+										<Button id="idfileInsurance" press="openInsuranceFile" visible="{localModel>/idfileInsurance}" text="Insurance Copy"/>
+										<Button id="idfileMOTCard" press="openMOTCard" visible="{localModel>/idfileMOTCard}" text="MOT Card"/>
+										<Button id="idfileMVPIDocument" press="openMVPIDocument" visible="{localModel>/idfileMVPIDocument}" text="MVPI Document"/>
+										<Button id="idfileSASOCertificate" press="openSASOCertificateFile" visible="{localModel>/idfileSASOCertificate}" text="SASO Certificate"/>
+									</HBox>
+									<Label/>
+								</f:content>
+							</f:SimpleForm>
+						</VBox>
+						<VBox class="sapUiSmallMargin">
+							<Label text="Terms and Condition:"/>
+							<Label text="1. I Accept all the terms and confition of the Company for the Traffic Violation"/>
+							<!--<Label text="I Accept"/>-->
+							<!--<VBox>-->
+								<!--	<Label text="1. Term 1"/>-->
+								<!--	<Label text="2. Term 2"/>-->
+								<!--	<Label text="2.1. Term 2.1"/>-->
+								<!--	<Label text="3. Term 3"/>-->
+								<!--	<Label text="4. Term 4"/>-->
+								<!--</VBox>-->
+							<!--	<Table id="idProductsTable" inset="false" items="{localModel>/violationCollection}">-->
+							<!--		<columns>-->
+							<!--			<Column width="2em">-->
+							<!--				<Text text="No"/>-->
+							<!--			</Column>-->
+							<!--			<Column width="14em" minScreenWidth="Tablet" demandPopin="true" hAlign="End">-->
+							<!--				<Text text="Violation Description in Arabic"/>-->
+							<!--			</Column>-->
+							<!--			<Column width="14em" minScreenWidth="Desktop" demandPopin="true">-->
+							<!--				<Text text="Violation Description in English"/>-->
+							<!--			</Column>-->
+							<!--			<Column width="4em" minScreenWidth="Desktop" demandPopin="true" hAlign="Center">-->
+							<!--				<Text text="Ownership"/>-->
+							<!--			</Column>-->
+							<!--			<Column width="3em" hAlign="End">-->
+							<!--				<Text text="Amount"/>-->
+							<!--			</Column>-->
+							<!--		</columns>-->
+							<!--		<items>-->
+							<!--			<ColumnListItem>-->
+							<!--				<cells>-->
+							<!--					<ObjectIdentifier title="{localModel>No}"/>-->
+							<!--					<Text text="{localModel>DescAr}"/>-->
+							<!--					<Text text="{localModel>DescEn}"/>-->
+							<!--					<Text text="{localModel>Ownership}"/>-->
+							<!--					<Text text="{localModel>Amount}"/>-->
+							<!--				</cells>-->
+							<!--			</ColumnListItem>-->
+							<!--		</items>-->
+							<!--	</Table>-->
+							<!--</VBox>-->
+							<Label/>
+							<CheckBox id="idAccept" text="I Accept" select="onTerms" enabled="{localModel>/idAccept}"/>
+						</VBox>
+					</content>
+					<footer>
+						<OverflowToolbar id="otbFooter">
+							<ToolbarSpacer/>
+							<Button type="Emphasized" text="Submit Request" press="onSubmitRequest" width="200px" id="Idsubmit" visible="{localModel>/SumitRequestVisible}">
+								<layoutData><OverflowToolbarLayoutData priority="NeverOverflow"/></layoutData>
+							</Button>
+						</OverflowToolbar>
+					</footer>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
