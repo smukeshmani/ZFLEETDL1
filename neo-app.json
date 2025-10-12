@@ -45,7 +45,7 @@
       "path": "/sap/opu/odata",
       "target": {
         "type": "destination",
-        "name": "DEV_BRN_HEC",
+        "name": "DEV_BRN_786",
         "entryPath": "/sap/opu/odata"
       },
       "description": "HEC Development Berain"

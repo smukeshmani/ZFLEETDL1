@@ -1,0 +1,47 @@
+specVersion: "3.1"
+metadata:
+  name: zfleet_delivery_truck_req.zfleet_delivery_truck_req
+type: application
+server:
+  customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertError: false
+        backend:
+          - path: /sap
+            url: http://93.112.9.44:8060/
+            client: "786"
+            destination: DEV_BRN_786
+          - url: http://93.112.9.44:8060/
+            client: "786"
+            authenticationType: BasicAuthentication
+            destination: DEV_BRN_786
+            path: /sap/opu/odata/sap/ZFLEET_DELIVERY_TRUCK_REQ/
+        ui5:
+          path:
+            - /resources
+            - /test-resources
+          url: https://ui5.sap.com
+          version: 1.52.51
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+    - name: fiori-tools-preview
+      afterMiddleware: fiori-tools-appreload
+      configuration:
+        component: ZFLEET_DELIVERY_TRUCK_REQ.ZFLEET_DELIVERY_TRUCK_REQ
+        ui5Theme: sap_fiori_3
+    - name: sap-fe-mockserver
+      beforeMiddleware: csp
+      configuration:
+        mountPath: /
+        services:
+          - urlPath: /sap/opu/odata/sap/ZGBC_FLEET_PROCESS_DLT_SRV
+            metadataPath: ./webapp/localService/metadata.xml
+            mockdataPath: ./webapp/localService/ZGBC_FLEET_PROCESS_DLT_SRV/data
+            generateMockData: true
+        annotations: []

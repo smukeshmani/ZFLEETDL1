@@ -3,7 +3,7 @@
 	<Shell id="shell">
 		<App id="idAppControl">
 			<pages>
-				<Page title="{i18n>title}" titleAlignment="Center">
+				<Page title="{i18n>title}" >
 					<content>
 						<MessageStrip visible="{localModel2>/Visible}" text="{localModel2>/Text}" showIcon="true" showCloseButton="true" class="sapUiMediumMarginBottom"/>
 						<VBox class="sapUiSmallMargin">
