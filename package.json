@@ -12,7 +12,6 @@
   "main": "webapp/index.html",
   "scripts": {
     "start": "node --trace-deprecation index.js",
-    "start-local": "fiori run --config ./ui5-local.yaml --open \"test/flpSandboxMockServer.html?sap-client=100&sap-ui-xx-viewCache=false#app-tile\"",
     "start-noflp": "fiori run --open \"index.html?sap-client=100&sap-ui-xx-viewCache=false\"",
     "start-variants-management": "fiori run --open \"preview.html?sap-client=100&sap-ui-xx-viewCache=false&fiori-tools-rta-mode=true&sap-ui-rta-skip-flex-validation=true#preview-app\"",
     "build": "ui5 build -a --clean-dest --include-task=generateCachebusterInfo",
@@ -27,14 +26,15 @@
   },
   "devDependencies": {
     "@sap-ux/ui5-middleware-fe-mockserver": "^2.3.10",
-    "@sap/ux-ui5-tooling": "1",
+    "@sap/ux-ui5-tooling": "1.19.1",
     "@ui5/cli": "^3.0.0",
     "rimraf": "3.0.2"
   },
   "dependencies": {
     "@sap-ux/adp-tooling": "^0.15.37",
     "@sap-ux/preview-middleware": "^0.23.21",
-    "external-editor": "^1.1.0"
+    "@sap/ux-specification": "^1.136.8",
+    "external-editor": "^3.1.0"
   },
   "repository": {
     "type": "git",
