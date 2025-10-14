@@ -2,15 +2,11 @@ sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
 	"ZFLEET_DELIVERY_TRUCK_REQ/ZFLEET_DELIVERY_TRUCK_REQ/model/models"
-], function (UIComponent, Device, models) {
-	"use strict";
-
+], function (UIComponent, Device, models) {	"use strict";
 	return UIComponent.extend("ZFLEET_DELIVERY_TRUCK_REQ.ZFLEET_DELIVERY_TRUCK_REQ.Component", {
-
 		metadata: {
 			manifest: "json"
 		},
-
 		/**
 		 * The component is initialized by UI5 automatically during the startup of the app and calls the init method once.
 		 * @public

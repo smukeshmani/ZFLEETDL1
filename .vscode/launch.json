@@ -1,83 +1,31 @@
 {
-    "configurations": [
-        {
-            "args": [
-                "--open",
-                "test/flpSandbox.html#app-tile"
-            ],
-            "console": "internalConsole",
-            "cwd": "${workspaceFolder}",
-            "env": {
-                "DEBUG": "--inspect",
-                "FIORI_TOOLS_URL_PARAMS": "sap-client=100&sap-ui-xx-viewCache=false",
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/ZFLEETDL1\"}"
-            },
-            "internalConsoleOptions": "openOnSessionStart",
-            "name": "Start ZFLEETDL1",
-            "outputCapture": "std",
-            "request": "launch",
-            "runtimeArgs": [
-                "fiori",
-                "run"
-            ],
-            "runtimeExecutable": "npx",
-            "type": "node",
-            "windows": {
-                "runtimeExecutable": "npx.cmd"
-            }
+  "configurations": [
+    {
+        "name": "ZFLEETDL1",
+        "type": "node",
+        "request": "launch",
+        "cwd": "${workspaceFolder}",
+        "runtimeExecutable": "npx",
+        "windows": {
+            "runtimeExecutable": "npx.cmd"
         },
-        {
-            "args": [
-                "--open",
-                "test/flpSandbox.html#app-tile"
-            ],
-            "console": "internalConsole",
-            "cwd": "${workspaceFolder}",
-            "env": {
-                "FIORI_TOOLS_URL_PARAMS": "sap-client=100&sap-ui-xx-viewCache=false",
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/ZFLEETDL1\"}"
-            },
-            "internalConsoleOptions": "openOnSessionStart",
-            "name": "Start ZFLEETDL1 Mock",
-            "outputCapture": "std",
-            "request": "launch",
-            "runtimeArgs": [
-                "fiori",
-                "run"
-            ],
-            "runtimeExecutable": "npx",
-            "type": "node",
-            "windows": {
-                "runtimeExecutable": "npx.cmd"
-            }
-        },
-        {
-            "args": [
-                "--config",
-                "./ui5-local.yaml",
-                "--open",
-                "test/flpSandbox.html#app-tile"
-            ],
-            "console": "internalConsole",
-            "cwd": "${workspaceFolder}",
-            "env": {
-                "FIORI_TOOLS_URL_PARAMS": "sap-client=100&sap-ui-xx-viewCache=false",
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/ZFLEETDL1\"}"
-            },
-            "internalConsoleOptions": "openOnSessionStart",
-            "name": "Start ZFLEETDL1 Local",
-            "outputCapture": "std",
-            "request": "launch",
-            "runtimeArgs": [
-                "fiori",
-                "run"
-            ],
-            "runtimeExecutable": "npx",
-            "type": "node",
-            "windows": {
-                "runtimeExecutable": "npx.cmd"
-            }
-        },
+        "runtimeArgs": [
+            "fiori",
+            "run"
         ],
-    "version": "0.2.0"
+        "args": [
+            "--open",
+            "index.html"
+        ],
+        "console": "internalConsole",
+        "internalConsoleOptions": "openOnSessionStart",
+        "outputCapture": "std",
+        "env": {
+            "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/ZFLEETDL1\"}",
+            "FIORI_TOOLS_BACKEND_CONFIG": "[{\"path\":\"/sap\",\"url\":\"http://93.112.9.44:8060/\",\"client\":\"786\",\"destination\":\"DEV_BRN_786\"}]",
+            "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
+        }
+    }
+  ],
+  "version": "0.2.0"
 }
